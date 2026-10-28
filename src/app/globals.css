@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0b;
+  --foreground: #f4f4f5;
+
+  --brand-bg: #0a0a0b;
+  --brand-surface: #151517;
+  --brand-surface-2: #1d1d20;
+  --brand-border: #2a2a2e;
+  --brand-orange: #ff6a1a;
+  --brand-orange-dark: #d6500c;
+  --brand-orange-glow: #ff8a3d;
+  --brand-silver: #d4d8db;
+  --brand-silver-dark: #8b9096;
+  --brand-muted: #a3a3a8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-surface-2: var(--brand-surface-2);
+  --color-brand-border: var(--brand-border);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-dark: var(--brand-orange-dark);
+  --color-brand-orange-glow: var(--brand-orange-glow);
+  --color-brand-silver: var(--brand-silver);
+  --color-brand-silver-dark: var(--brand-silver-dark);
+  --color-brand-muted: var(--brand-muted);
+  --font-sans: var(--font-rajdhani), var(--font-geist-sans), sans-serif;
+  --font-display: var(--font-oswald), var(--font-geist-sans), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, var(--brand-orange-glow), var(--brand-orange) 60%, var(--brand-orange-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-steel {
+  background: linear-gradient(135deg, #ffffff, var(--brand-silver) 50%, var(--brand-silver-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: var(--brand-orange);
+  color: #0a0a0b;
 }
